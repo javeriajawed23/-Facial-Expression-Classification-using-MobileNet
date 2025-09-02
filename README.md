@@ -1,122 +1,80 @@
 # Facial-Expression-Classification-using-MobileNet
 😀Real-time emotion detection using lightweight deep learning for smarter human-computer interaction.
 
-📌 Introduction
+Introduction
 
-This project develops a facial emotion recognition system using MobileNet, a lightweight Convolutional Neural Network (CNN). The system classifies facial expressions into seven categories:
+This project develops a facial emotion recognition system using MobileNet, a lightweight Convolutional Neural Network (CNN). The system classifies facial expressions into seven categories: Angry, Disgust, Fear, Happy, Neutral, Sad, Surprise. It is designed to be efficient and deployable on mobile or embedded devices for real-time emotion recognition.
 
-Angry
+Facial expression recognition has applications in:
 
-Disgust
+Healthcare: Mood and mental health monitoring
 
-Fear
+Security: Stress or aggression detection
 
-Happy
+Education: Adapting content based on student engagement
 
-Neutral
+Robotics & Smart Devices: Emotion-aware interfaces
 
-Sad
+Features
 
-Surprise
+Real-time facial emotion recognition
 
-The model is optimized for deployment on mobile and embedded systems, making it suitable for real-time predictions on low-power devices.
+Classifies seven basic emotions
 
-Applications:
+Lightweight and fast using MobileNet
 
-Healthcare: Emotion monitoring for mental health
+GUI for live predictions
 
-Security: Stress/aggression detection in surveillance
+Data augmentation to improve model robustness
 
-Education: Adaptive e-learning based on student engagement
+Dataset
 
-Customer Service & Robotics: Emotion-aware interactions
+FER-2013 Dataset from Kaggle: Link
 
-🛠️ Tech Stack
+Balanced subset: 2,000 images per class (14,000 total)
 
-Language & Frameworks: Python, TensorFlow, Keras
+Images preprocessed: resized to 224×224, converted to RGB, normalized
 
-Libraries: OpenCV, Matplotlib, Seaborn, NumPy, Pandas
+Augmentation: flipping, zooming, shearing, shifting
 
-Dataset: FER-2013 (Kaggle)
+Technologies Used
 
-Platform: Google Colab (GPU-enabled)
+Deep Learning & Computer Vision: TensorFlow, Keras, OpenCV
 
-Model Architecture: MobileNet (pre-trained on ImageNet)
+Data Analysis & Visualization: Matplotlib, Seaborn
 
-📊 Dataset
+Development Platform: Google Colab (GPU-enabled)
 
-Subset Used: 2,000 images per class → 14,000 total images
+Installation
 
-Organization: Images stored in subdirectories per emotion label
+Clone the repository:
 
-Reason for FER-2013: Large, diverse, real-world facial expressions for robust generalization
+git clone <repository_url>
 
-🔄 Preprocessing & Data Augmentation
 
-Image Preprocessing:
+Install required packages:
 
-Resized to 224×224 pixels
+pip install tensorflow keras opencv-python matplotlib seaborn
 
-Grayscale → RGB conversion
 
-Pixel normalization ([0, 1] scale)
+Download the dataset and organize images into subfolders by emotion label.
 
-Data Augmentation:
+Usage
 
-Horizontal flipping
+Load the dataset and preprocess images.
 
-Zooming & shearing
+Train the MobileNet-based CNN model.
 
-Width & height shifting
+Use the saved best_model.h5 for predictions.
 
-🧠 Model Architecture
+Run GUI for real-time emotion detection from webcam or image input.
 
-Base Model: MobileNet (pre-trained, frozen layers)
-
-Flatten Layer: Converts feature maps to 1D
-
-Dense Layer: 7 neurons with softmax activation
-
-Optimizer: Adam
-
-Loss Function: Categorical cross-entropy
-
-Training Enhancements: EarlyStopping & ModelCheckpoint
-
-⚙️ Training Configuration
-
-Epochs: 30
-
-Batch Size: 32
-
-Validation Split: 20%
-
-Steps per Epoch: 10
-
-📈 Results
+Results
 
 Training Accuracy: 98.11%
 
 Validation Accuracy: 98.83%
 
-Rapid convergence within first few epochs
+High performance across all seven emotion classes
 
-Strong generalization with minimal overfitting
-
-Evaluation Metrics: Precision, Recall, F1-score, Confusion Matrix, Multi-class ROC Curve
-
-Observations:
-
-Slight confusion between similar emotions (e.g., Fear vs Surprise)
-
-Model is highly efficient for real-time FER tasks
-
-🖥️ GUI & Sample Predictions
-
-Graphical interface implemented for real-time emotion detection
-
-Sample Predictions:
-
-Actual: Happy → Predicted: Happy
-
-Actual: Surprise → Predicted: Surprise
+Confusion matrix and ROC curves confirm robustness
